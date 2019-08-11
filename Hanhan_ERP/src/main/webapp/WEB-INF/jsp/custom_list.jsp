@@ -25,7 +25,7 @@
 
 <div  id="toolbar_custom" style=" height: 22px; padding: 3px 11px; background: #fafafa;">  
 	
-	<%--<c:forEach items="${sessionScope.sysPermissionList}" var="per" >
+	<c:forEach items="${sessionScope.sysPermissionList}" var="per" >
 		<c:if test="${per=='custom:add' }" >
 		    <div style="float: left;">  
 		        <a href="#" class="easyui-linkbutton" plain="true" icon="icon-add" onclick="custom_add()">新增</a>  
@@ -42,26 +42,7 @@
 		        	 onclick="custom_delete()">删除</a>  
 		    </div>  
 		</c:if>
-	</c:forEach>--%>
-
-			<div style="float: left;">
-				<a href="#" class="easyui-linkbutton" plain="true" icon="icon-add" onclick="custom_add()">新增</a>
-			</div>
-
-
-			<div style="float: left;">
-				<a href="#" class="easyui-linkbutton" plain="true" icon="icon-edit" onclick="custom_edit()">编辑</a>
-			</div>
-
-
-			<div style="float: left;">
-				<a href="#" class="easyui-linkbutton" plain="true" icon="icon-cancel"
-				   onclick="custom_delete()">删除</a>
-			</div>
-
-
-
-
+	</c:forEach>
 
 	<div class="datagrid-btn-separator"></div>
 	

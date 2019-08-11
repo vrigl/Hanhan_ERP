@@ -12,15 +12,11 @@ import java.util.List;
 public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
     EmployeeMapper employeeMapper;
-    EmployeeExample employeeExample = new EmployeeExample();
-    @Override
-    public List<Employee> getData() {
-        List<Employee> employees = employeeMapper.selectByExample(employeeExample);
-        return employees;
-    }
 
     @Override
-    public Employee selectEmployeeById(String empId) {
-        return employeeMapper.selectByPrimaryKey(empId);
+    public List<Employee> getData() {
+        EmployeeExample employeeExample = new EmployeeExample();
+        List<Employee> employees = employeeMapper.selectByExample(employeeExample);
+        return employees;
     }
 }

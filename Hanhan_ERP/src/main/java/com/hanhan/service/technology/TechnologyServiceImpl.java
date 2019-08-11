@@ -14,21 +14,20 @@ import java.util.List;
 public class TechnologyServiceImpl implements TechnologyService {
     @Autowired
     TechnologyMapper technologyMapper;
-    TechnologyExample technologyExample = new TechnologyExample();
-    @Override
-    public ResponseVo<Technology> queryTechnologyByPageAndRows(int page, int rows) {
-        int total = (int)technologyMapper.countByExample(technologyExample);
-        PageHelper.startPage(page,rows);
-        List<Technology> technologies = technologyMapper.selectByExample(technologyExample);
-        ResponseVo<Technology> technologyResponseVo = new ResponseVo<>();
-        technologyResponseVo.setRows(technologies);
-        technologyResponseVo.setTotal(total);
-        return technologyResponseVo;
-    }
+
 
     @Override
     public List<Technology> getData() {
+        TechnologyExample technologyExample = new TechnologyExample();
         List<Technology> technologies = technologyMapper.selectByExample(technologyExample);
         return technologies;
+    }
+
+    @Override
+    public Technology queryTechnologyById(String technologyId) {
+        TechnologyExample technologyExample = new TechnologyExample();
+        technologyExample.createCriteria().andTechnologyIdEqualTo(technologyId);
+        List<Technology> technologies = technologyMapper.selectByExample(technologyExample);
+        return technologies.remove(0);
     }
 }

@@ -4,9 +4,6 @@ import java.util.Date;
 
 public class Manufacture {
     Order cOrder;
-
-
-
     Technology technology;
     private String manufactureSn;
 

@@ -23,18 +23,4 @@ public class TechnologyPlanController {
         List<Technology> data = technologyService.getData();
         return data;
     }
-    @RequestMapping("find")
-    public String find(HttpSession httpSession){
-        ArrayList<String> sysPermissionList = new ArrayList<>();
-        sysPermissionList.add("technology:add");
-        sysPermissionList.add("technology:edit");
-        sysPermissionList.add("technology:delete");
-        httpSession.setAttribute("sysPermissionList",sysPermissionList);
-        return "/WEB-INF/jsp/technology_list.jsp";
-    }
-    @RequestMapping("list")
-    public ResponseVo<Technology> list(int page,int rows){
-        ResponseVo<Technology> technologyResponseVo = technologyService.queryTechnologyByPageAndRows(page, rows);
-        return technologyResponseVo;
-    }
 }

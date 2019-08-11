@@ -29,4 +29,13 @@ public interface ManufactureMapper {
     int updateByPrimaryKey(Manufacture record);
 
     List<Manufacture> queryPageManufacture();
+
+
+    Manufacture queryByManufactureSn(String manufactureSn);
+
+    List<Manufacture> searchManufactureByManufactureSn(String searchValue);
+
+    List<Manufacture> searchManufactureByManufactureTechnologyName(String searchValue);
+
+    List<Manufacture> searchManufactureByManufactureOrderId(String searchValue);
 }

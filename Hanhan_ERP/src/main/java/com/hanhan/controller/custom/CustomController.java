@@ -2,6 +2,7 @@ package com.hanhan.controller.custom;
 
 import com.hanhan.bean.Custom;
 import com.hanhan.bean.Data;
+import com.hanhan.bean.ResponseVo;
 import com.hanhan.service.custom.CustomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,7 +23,12 @@ public class CustomController {
     CustomService customService;
 
     @RequestMapping("find")
-    public String find(){
+    public String find(HttpSession httpSession){
+        ArrayList<String> sysPermissionList = new ArrayList<>();
+        sysPermissionList.add("custom:add");
+        sysPermissionList.add("custom:edit");
+        sysPermissionList.add("custom:delete");
+        httpSession.setAttribute("sysPermissionList",sysPermissionList);
         return "/WEB-INF/jsp/custom_list.jsp";
     }
 
@@ -40,11 +46,7 @@ public class CustomController {
     }
     @RequestMapping("add")
     public String add(HttpSession httpSession){
-        ArrayList<String> sysPermissionList = new ArrayList<>();
-        sysPermissionList.add("order:add");
-        sysPermissionList.add("order:edit");
-        sysPermissionList.add("order:delete");
-        httpSession.setAttribute("sysPermissionList",sysPermissionList);
+
         return "/WEB-INF/jsp/custom_add.jsp";
     }
     @RequestMapping("insert")
@@ -72,10 +74,14 @@ public class CustomController {
     public String editJudge(){
         return "";
     }
+
+
     @RequestMapping("edit")
     public String edit(){
         return "/WEB-INF/jsp/custom_edit.jsp";
     }
+
+
     @RequestMapping("update_all")
     @ResponseBody
     public Data upDateAll(Custom custom){
@@ -107,15 +113,15 @@ public class CustomController {
     }
     @RequestMapping("search_custom_by_customId")
     @ResponseBody
-    public List<Custom> searchCustomByCustomId(String searchValue,int page,int rows){
-        List<Custom> customs = customService.searchCustomByCustomId(searchValue, page, rows);
+    public ResponseVo<Custom> searchCustomByCustomId(String searchValue,int page,int rows){
+        ResponseVo<Custom> customs = customService.searchCustomByCustomId(searchValue, page, rows);
         return customs;
     }
 
     @RequestMapping("search_custom_by_customName")
     @ResponseBody
-    public List<Custom> searchCustomByCustomName(String searchValue,int page,int rows){
-        List<Custom> customs = customService.searchCustomByCustomName(searchValue, page, rows);
+    public ResponseVo<Custom> searchCustomByCustomName(String searchValue,int page,int rows){
+        ResponseVo<Custom> customs = customService.searchCustomByCustomName(searchValue, page, rows);
         return customs;
     }
     @RequestMapping("get/{customId}")

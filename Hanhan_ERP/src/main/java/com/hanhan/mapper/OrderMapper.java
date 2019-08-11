@@ -7,6 +7,8 @@ import org.apache.ibatis.annotations.Param;
 
 public interface OrderMapper {
 
+   List<Order> searchOrderByOrderCustom(String searchValue) ;
+
     List<Order> selectPageOrders();
 
     long countByExample(OrderExample example);
@@ -30,4 +32,14 @@ public interface OrderMapper {
     int updateByPrimaryKeySelective(Order record);
 
     int updateByPrimaryKey(Order record);
+
+    Order selectByOrderId(String orderId);
+
+    List<Order> searchCustomByOrderId(String searchValue);
+
+    int countSearchOrderByOrderCustom(String searchValue);
+
+    int countSearchOrderByOrderProduct(String searchValue);
+
+    List<Order> searchOrderByOrderProduct(String searchValue);
 }

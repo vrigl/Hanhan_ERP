@@ -455,10 +455,10 @@ function doSearch_device(value,name){ //用户输入用户名,点击搜素,触�
     		onOpen :function(){
     			$.get("employee/get/"+row.deviceKeeperId,'',function(data){
 		    		//回显数据
-					// data.birthday = TAOTAO.formatDateTime(data.birthday);
-					// data.joinDate = TAOTAO.formatDateTime(data.joinDate);
-					// data.departmentId=data.department.departmentId;
-					// data.departmentName=data.department.departmentName;
+					data.birthday = TAOTAO.formatDateTime(data.birthday);
+					data.joinDate = TAOTAO.formatDateTime(data.joinDate);
+					data.departmentId=data.department.departmentId;
+					data.departmentName=data.department.departmentName;
 		    		$("#deviceKeeperInfo_deviceList").form("load", data);
     	    	});
     		}

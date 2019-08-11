@@ -7,8 +7,6 @@ public class DeviceFault {
 
     private String deviceId;
 
-    private String deviceName;
-
     private String deviceFaultCause;
 
     private String deviceFaultDetail;
@@ -63,13 +61,5 @@ public class DeviceFault {
 
     public void setDeviceFaultMaintenance(String deviceFaultMaintenance) {
         this.deviceFaultMaintenance = deviceFaultMaintenance == null ? null : deviceFaultMaintenance.trim();
-    }
-
-    public String getDeviceName() {
-        return deviceName;
-    }
-
-    public void setDeviceName(String deviceName) {
-        this.deviceName = deviceName;
     }
 }

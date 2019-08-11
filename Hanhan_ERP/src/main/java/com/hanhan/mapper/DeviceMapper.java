@@ -6,13 +6,6 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface DeviceMapper {
-    /**
-     *查询所有的Device数据
-     */
-    List<Device> queryAllDevices();
-
-    List<Device> fuzzyQueryByDeviceTypeName(String searchValue);
-
     long countByExample(DeviceExample example);
 
     int deleteByExample(DeviceExample example);

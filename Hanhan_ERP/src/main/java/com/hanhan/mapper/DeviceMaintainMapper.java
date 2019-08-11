@@ -1,19 +1,11 @@
 package com.hanhan.mapper;
 
-import com.hanhan.bean.DeviceCheck;
 import com.hanhan.bean.DeviceMaintain;
 import com.hanhan.bean.DeviceMaintainExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface DeviceMaintainMapper {
-
-    List<DeviceMaintain> selectAllDeviceMaintain();
-
-    List<DeviceMaintain> fuzzyQueryByDeviceMaintainId(String searchValue);
-
-    List<DeviceMaintain> fuzzyQueryByDeviceFaultId(String searchValue);
-
     long countByExample(DeviceMaintainExample example);
 
     int deleteByExample(DeviceMaintainExample example);

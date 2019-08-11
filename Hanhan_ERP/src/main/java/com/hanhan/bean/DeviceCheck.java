@@ -7,11 +7,7 @@ public class DeviceCheck {
 
     private String deviceId;
 
-    private String deviceName;
-
     private String deviceCheckEmpId;
-
-    private String deviceCheckEmp;
 
     private Date deviceCheckDate;
 
@@ -65,21 +61,5 @@ public class DeviceCheck {
 
     public void setDeviceCheckFaultId(String deviceCheckFaultId) {
         this.deviceCheckFaultId = deviceCheckFaultId == null ? null : deviceCheckFaultId.trim();
-    }
-
-    public String getDeviceName() {
-        return deviceName;
-    }
-
-    public void setDeviceName(String deviceName) {
-        this.deviceName = deviceName;
-    }
-
-    public String getDeviceCheckEmp() {
-        return deviceCheckEmp;
-    }
-
-    public void setDeviceCheckEmp(String deviceCheckEmp) {
-        this.deviceCheckEmp = deviceCheckEmp;
     }
 }

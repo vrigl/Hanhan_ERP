@@ -7,6 +7,4 @@ import java.util.List;
 public interface EmployeeService {
     List<Employee> getData();
 
-    Employee selectEmployeeById(String empId);
-
 }

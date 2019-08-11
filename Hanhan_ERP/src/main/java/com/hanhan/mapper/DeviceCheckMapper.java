@@ -1,19 +1,11 @@
 package com.hanhan.mapper;
 
-import com.hanhan.bean.Device;
 import com.hanhan.bean.DeviceCheck;
 import com.hanhan.bean.DeviceCheckExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface DeviceCheckMapper {
-
-    List<DeviceCheck> queryAllDeviceCheck();
-
-    List<DeviceCheck> fuzzyQueryByDeviceCheckId(String searchValue);
-
-    List<DeviceCheck> fuzzyQueryByDeviceName(String searchValue);
-
     long countByExample(DeviceCheckExample example);
 
     int deleteByExample(DeviceCheckExample example);

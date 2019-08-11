@@ -10,8 +10,6 @@ public class DeviceMaintain {
 
     private String deviceMaintainEmpId;
 
-    private String deviceMaintainEmp;
-
     private Date deviceMaintainDate;
 
     private String deviceMaintainResult;
@@ -74,13 +72,5 @@ public class DeviceMaintain {
 
     public void setNote(String note) {
         this.note = note == null ? null : note.trim();
-    }
-
-    public String getDeviceMaintainEmp() {
-        return deviceMaintainEmp;
-    }
-
-    public void setDeviceMaintainEmp(String deviceMaintainEmp) {
-        this.deviceMaintainEmp = deviceMaintainEmp;
     }
 }

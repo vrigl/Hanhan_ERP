@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface WorkMapper {
+    Work selectByWorkId(String workId);
     long countByExample(WorkExample example);
 
     int deleteByExample(WorkExample example);
@@ -29,4 +30,18 @@ public interface WorkMapper {
     int updateByPrimaryKey(Work record);
 
     List<Work> selectPageWorks();
+
+    List<Work> searchWorkByWorkId(String searchValue);
+
+    int countSearchWorkByWorkProduct(String searchValue);
+
+    List<Work> searchWorkByWorkProduct(String searchValue);
+
+    int countSearchWorkByWorkDevice(String searchValue);
+
+    List<Work> searchWorkByWorkDevice(String searchValue);
+
+    int countSearchWorkByWorkProcess(String searchValue);
+
+    List<Work> searchWorkByWorkProcess(String searchValue);
 }
